@@ -1,0 +1,22 @@
+# Core data
+pandas
+numpy
+requests
+scipy
+fredapi
+python-dotenv
+
+# Visualisation
+matplotlib
+seaborn
+plotly
+
+# Modelling
+statsmodels
+scikit-learn
+xgboost
+neuralprophet
+
+# Jupyter
+jupyter
+ipykernel
