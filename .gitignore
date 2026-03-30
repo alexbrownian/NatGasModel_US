@@ -1,0 +1,20 @@
+# Environment
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+journal.md
+
+
+# OS
+.DS_Store
+
+# Models (large binary files — serialise separately if needed)
+models/*.pkl
+
+# Data (raw data committed intentionally — see data/raw/)
+# Uncomment below if you decide not to commit raw data
+# data/raw/
