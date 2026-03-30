@@ -68,6 +68,37 @@
 
 ---
 
+## The Shale Revolution
+
+### What It Was
+The shale revolution was a structural transformation of US natural gas supply between roughly **2005–2015**, driven by two technologies used together at scale for the first time:
+
+- **Horizontal drilling** — instead of drilling straight down, rigs drill horizontally through shale rock formations for thousands of feet, exposing far more rock surface to the wellbore
+- **Hydraulic fracturing ("fracking")** — high-pressure fluid is pumped into the rock to crack it open, releasing gas (or oil) trapped in the shale
+
+Before this, shale rock was known to contain gas but was considered uneconomic — the rock was too tight (low permeability) to flow gas at commercial rates. Horizontal drilling + fracking solved both problems simultaneously.
+
+### The Key Shale Basins for Gas
+| Basin | Location | Notes |
+|---|---|---|
+| **Marcellus** | Pennsylvania / West Virginia | Largest gas basin in the US; transformed Appalachia into a major producing region |
+| **Haynesville** | Louisiana / East Texas | High-quality dry gas; one of the lowest-cost basins in the country |
+| **Permian** | West Texas | Primarily an oil play — but produces enormous volumes of **associated gas** as a byproduct |
+| **Utica** | Ohio / Pennsylvania | Extends the Appalachian fairway; wet gas and dry gas windows |
+| **Eagle Ford** | South Texas | Oil + condensate + associated gas |
+
+### What It Did to the Market
+- **Before shale (~2000–2008):** US gas was scarce. Production peaked in the 1970s and had been declining. The US was building LNG *import* terminals (to bring gas *in* from Qatar, etc.)
+- **After shale (~2009–present):** The US became the world's largest gas producer. Import terminals were converted to *export* terminals. Henry Hub prices collapsed from ~$8 to ~$2–4 — a structural repricing of the entire commodity
+- **Consequence for prices:** The shale cost curve created a soft ceiling around $3–4/MMBtu. When prices rise above that level, producers drill more wells; supply increases and prices fall back. This is why 2022 was unusual — the external LNG demand shock overwhelmed the supply response
+
+### Why It Matters for This Model
+- A model trained on 2000–2008 data would embed a high-price prior — completely wrong post-2009
+- The regime shift is not gradual: there is a visible **structural break** in the price series around 2009 when Marcellus production began ramping at scale
+- The shale cost curve (~$2–3/MMBtu for the lowest-cost basins) is the effective downside floor for Henry Hub under normal conditions
+
+---
+
 ## Demand Structure
 
 ### Two-Season US Gas Market
