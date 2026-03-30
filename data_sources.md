@@ -103,7 +103,7 @@
 | **API** | REST, no key needed |
 | **License** | CC BY 4.0 |
 | **Cities** | New York (40.71, -74.01), Chicago (41.88, -87.63), Houston (29.76, -95.37), Atlanta (33.75, -84.39), Boston (42.36, -71.06) |
-| **Notes** | Average across all 5 cities for a national consumption proxy — same multi-city approach as German project. Northeast + Midwest = heating demand. South = cooling/power burn. |
+| **Notes** | Average across all 5 cities for a national consumption proxy. Northeast + Midwest = heating demand. South = cooling/power burn. |
 
 ---
 
@@ -119,7 +119,7 @@
 | **Units** | Degree days (base 65°F) |
 | **Coverage** | 1990s to present |
 | **License** | Public domain |
-| **Notes** | HDD base = 65°F (equivalent to German 18°C threshold). EIA publishes HDD-weighted consumption forecasts — useful for model validation. |
+| **Notes** | HDD base = 65°F (eurppean 18°C threshold). EIA publishes HDD-weighted consumption forecasts — useful for model validation. |
 
 ---
 

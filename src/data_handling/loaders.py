@@ -95,8 +95,12 @@ def _eia_fetch(route: str, frequency: str, facets: dict,
 
 def fetch_henry_hub_prices(start: str = "2000-01-01") -> None:
     """
-    Fetch Henry Hub natural gas daily spot price from FRED (series DHHNGSP).
-    FRED sources this directly from EIA — same underlying data, cleaner API.
+    Fetch Henry Hub natural gas daily spot price from FRED (series DHHNGSP). 
+    D daily
+    HH henry hub
+    NGS natural gas spot
+    P price
+    FRED sources this directly from EIA —  better ai already parsed (fredapi lib wrapper)
     Saves to data/raw/henry_hub_daily.csv.
     """
     if not FRED_KEY:
@@ -113,6 +117,11 @@ def fetch_henry_hub_prices(start: str = "2000-01-01") -> None:
 def fetch_wti_prices(start: str = "2000-01-01") -> None:
     """
     Fetch WTI crude oil daily spot price from FRED (series DCOILWTICO).
+    D daily
+    COIL crude oi
+    WTI west texas intermediate
+    CO cushing oklahoma - physical delivery points 
+
     Saves to data/raw/wti_daily.csv.
     """
     if not FRED_KEY:
@@ -130,6 +139,8 @@ def fetch_eia_storage(start: str = "2000-01-01") -> None:
     """
     Fetch EIA weekly natural gas storage, Lower 48 working gas (Bcf).
     EIA v2 route: natural-gas/stor/wkly
+
+    lower 48 is everything besides Alaska 
 
     This is the single most market-moving series in US gas — the Thursday
     EIA storage report. "Storage surprise" (actual vs consensus) drives
@@ -160,7 +171,7 @@ def fetch_eia_storage(start: str = "2000-01-01") -> None:
 
 def fetch_eia_consumption(start: str = "2001-01-01") -> None:
     """
-    Fetch EIA monthly US natural gas consumption, all sectors combined (MMcf).
+    Fetch EIA monthly US natural gas consumption, all sectors combined (MMcf) --> million cubic feet , roughly BTU
     EIA v2 route: natural-gas/cons/sum
 
     Note: EIA consumption data is published monthly with ~2 month lag.
@@ -289,28 +300,32 @@ def read_henry_hub_prices(file: str = "data/raw/henry_hub_daily.csv") -> pd.Seri
     idx = pd.date_range(start=s.index.min(), end=s.index.max(), freq="D")
     return s.reindex(idx).interpolate(method="time").rename("henry_hub_price")
 
-
+## these are a bit assumptions but are left for simplicitity
 def read_wti_prices(file: str = "data/raw/wti_daily.csv") -> pd.Series:
     """
     Read WTI crude oil daily spot price. Reindexes and interpolates gaps.
     Returns pd.Series named "wti_price".
+
+    ---- we assume no huge geopolitical events during the weekend (trump LOL) ----
     """
     df  = pd.read_csv(file, index_col="date", parse_dates=True)
     s   = df["wti_price"].astype(float)
     idx = pd.date_range(start=s.index.min(), end=s.index.max(), freq="D")
-    return s.reindex(idx).interpolate(method="time").rename("wti_price")
+    return s.reindex(idx).interpolate(method="time").rename("wti_price") 
+    #interpolate straight line between two surrounding real prices
 
 
 def read_eia_storage(file: str = "data/raw/eia_storage_weekly.csv") -> pd.Series:
     """
     Read EIA weekly storage levels (Bcf). Forward-fills to daily — storage
-    is assumed constant within the week until the next Thursday report.
+    is assumed constant within the week until the next Thursday report. (limitation of EIA data set)
     Returns pd.Series named "storage_bcf".
     """
     df  = pd.read_csv(file, index_col="date", parse_dates=True)
     s   = df["storage_bcf"].astype(float).sort_index()
     idx = pd.date_range(start=s.index.min(), end=s.index.max(), freq="D")
-    return s.reindex(idx).ffill().rename("storage_bcf")
+    return s.reindex(idx).ffill().rename("storage_bcf") 
+    #ffill last known value from when the EIA releases storages (thursday 10:30 ET)
 
 
 def read_eia_consumption(file: str = "data/raw/eia_consumption_monthly.csv") -> pd.Series:
