@@ -35,6 +35,24 @@
 
 ## Storage — The Central Market Driver
 
+### Henry Hub Price vs EIA Storage
+
+| | Henry Hub Price | EIA Storage |
+|---|---|---|
+| What it is | Market price of gas ($/MMBtu) | Inventory level (Bcf) |
+| Analogy | Price tag at the pump | Petrol in the tank |
+| Frequency | Continuous (daily close) | Weekly (Thursday 10:30am ET) |
+| Reported by | Market / NYMEX | EIA |
+
+Storage is the primary driver of price level. When storage is low relative to the seasonal average, the market prices in scarcity risk → price rises. When storage is high, the cushion removes that fear → price falls:
+
+```
+Storage deficit vs 5-yr avg  →  bullish  →  price ↑
+Storage surplus vs 5-yr avg  →  bearish  →  price ↓
+```
+
+**Lead/lag:** storage tends to lead price slightly — the physical inventory reality builds before the market fully prices it in. But price can also anticipate future storage changes via weather forecasts, so the relationship is not strictly one-directional.
+
 ### EIA Weekly Storage Report
 - Published every **Thursday at 10:30am ET**
 - Reports working gas in underground storage for the prior week (ending Friday)
@@ -43,6 +61,12 @@
   - Bigger-than-expected withdrawal (or smaller injection) = **bullish** (less supply in ground)
   - Smaller-than-expected withdrawal (or bigger injection) = **bearish**
 - Storage measured in **Bcf** (billion cubic feet)
+
+### Why Surplus/Deficit Matters More Than Absolute Level
+
+Raw storage level has a strong seasonal cycle — 1,000 Bcf in March is normal (end of withdrawal), 3,800 Bcf in October is normal (end of injection). Comparing raw levels across seasons is misleading.
+
+The **surplus/deficit vs the 5-year average for the same week** strips out the seasonal cycle and isolates whether the market is structurally tight or loose. This is the number analysts and traders actually watch.
 
 ### Working Gas vs Base Gas
 - **Working gas** — the volume that can actually be withdrawn and sold. This is the number the market watches (`SWO` in EIA facets)
