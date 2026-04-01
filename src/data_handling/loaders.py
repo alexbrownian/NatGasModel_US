@@ -158,6 +158,9 @@ def fetch_eia_storage(start: str = "2000-01-01") -> None:
         data_col  = "value",
         start     = start,
     )
+    #eia_fetch return dict from API call
+
+    #fixing the data frame to have date and storage_bcf columns, and saving to csv  
     df = (
         pd.DataFrame(records)[["period", "value"]]
         .rename(columns={"period": "date", "value": "storage_bcf"})
