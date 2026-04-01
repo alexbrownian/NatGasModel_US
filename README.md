@@ -2,8 +2,6 @@
 
 A full end-to-end quantitative research project modelling US natural gas demand and price dynamics, anchored to **Henry Hub** — the primary US gas price benchmark. The project spans the entire research lifecycle: live API data ingestion, per-series data analysis, cross-variable EDA, feature engineering, and a progression of forecasting models evaluated in a trading context.
 
-Built to replicate the methodology of a professional German natural gas consumption model, adapted for the US market.
-
 ---
 
 ## What This Project Does
