@@ -120,11 +120,9 @@ This file consolidates the main conclusions from the 001-005 data overview noteb
 
 ![HDD CDD annual variability](./005_temperature/hdd_cdd_annual_variability.svg)
 
-## Suggested Feature Priority for the Model
+##  Feature Priority for the Model
 
 1. Primary: HDD, CDD (plus short lags)
 2. Secondary: storage surplus/deficit vs seasonal norm
 3. Tertiary: lagged WTI (supply-side pressure)
 4. Context: month/season flags and volatility/regime controls
-
-If forecast horizon extends, consider adding interaction terms (for example, storage deficit x HDD) to represent weather sensitivity under tight inventory conditions.
