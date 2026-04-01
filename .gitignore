@@ -6,7 +6,6 @@ __pycache__/
 *.pyc
 *.pyo
 .ipynb_checkpoints/
-journal.md
 project_briefs/
 
 
