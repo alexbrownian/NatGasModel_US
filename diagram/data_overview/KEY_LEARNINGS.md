@@ -2,7 +2,7 @@
 
 This file consolidates the main conclusions from the 001-005 data overview notebooks and links directly to the generated diagrams.
 
-## Executive Takeaways
+## Key Takeaways
 
 1. Temperature-derived features are the strongest short-horizon demand regressors.
 2. Storage surplus/deficit (vs seasonal norm) is more informative than raw storage level.
